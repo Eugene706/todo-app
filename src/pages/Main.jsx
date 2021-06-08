@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
@@ -11,7 +12,7 @@ function Main() {
   useEffect(() => {
     dispatch(loadUser());
     dispatch(fetchLists());
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <div className="wraper">
       <Header />

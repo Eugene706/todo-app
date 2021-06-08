@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -27,7 +28,7 @@ function Registration() {
         setEmailWarning('');
       }
     }
-  }, [email]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [email]);
 
   useEffect(() => {
     if (password.length > 0) {
@@ -43,7 +44,7 @@ function Registration() {
         setPasswordWarning('');
       }
     }
-  }, [password]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [password]);
 
   useEffect(() => {
     if (password2.length > 0) {
@@ -53,7 +54,7 @@ function Registration() {
         setPassword2Warning('');
       }
     }
-  }, [password2]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [password2]);
 
   const Validations = () => {
     if (!emailWarning && !passwordWarning && !password2Warning) {
@@ -74,7 +75,7 @@ function Registration() {
             <input
               className="inp"
               type="text"
-              placeholder="sanya.pig@gmail.com"
+              placeholder="hromadskyi@gmail.com"
               name="email"
               value={email.trim()}
               onChange={(e) => setEmail(e.target.value)}

@@ -1,6 +1,7 @@
 import { Route, Switch } from 'react-router';
-import { Registration, Login, Main } from './pages';
-import { PrivateRoute } from './privatRoute/PrivateRoute'
+import { Login, Registration, Main } from './pages'
+
+import { PrivateRoute } from './privatRoute/PrivateRoute';
 
 function App() {
   return (

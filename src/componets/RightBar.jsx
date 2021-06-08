@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { createTasks } from '../redux/actions/task';
 import { Task, TasksHeader } from './index';
 
-// const tasks = ['Купить молоко', 'Изменить настройки', 'Посмотреть фильм', 'Посмотреть рецепт', 'Сделать питсу'];
-
 function RightBar() {
   const dispatch = useDispatch();
 
@@ -42,13 +40,7 @@ function RightBar() {
         <ul className="tasks-list">
           {tasks.length !== 0 &&
             tasks.map((obj, index) => (
-              <Task
-                listId={obj.list}
-                id={obj._id}
-                task={obj.task}
-                completed={obj.completed}
-                key={`${index}_${obj.task}`}
-              />
+              <Task listId={obj.list} id={obj._id} task={obj.task} completed={obj.completed} key={`${index}_${obj.task}`} />
             ))}
         </ul>
         {taskInpVisible && (

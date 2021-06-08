@@ -12,8 +12,6 @@ function LeaftBar() {
 
   const lists = useSelector(({ lists }) => lists.lists);
 
-  console.log(lists);
-
   const [arrow, setArrow] = useState(true);
   const [listInpVisible, setListInpVisible] = useState(false);
   const [listInpVal, setListInpVal] = useState('');
@@ -38,6 +36,8 @@ function LeaftBar() {
     }
   };
 
+  console.log(lists.length);
+
   return (
     <div className="left-content">
       <div className="left-content__container">
@@ -56,10 +56,9 @@ function LeaftBar() {
           <div className="nav">
             <ul className="list__item">
               {arrow &&
-                lists.length &&
-                lists.map((obj, index) => (
-                  <List id={obj._id} index={index} item={obj.list} key={`${index}_${obj.list}`} />
-                ))}
+                lists.length !== 0 &&
+                lists.length !== undefined &&
+                lists.map((obj, index) => <List id={obj._id} index={index} item={obj.list} key={`${index}_${obj.list}`} />)}
             </ul>
           </div>
           <div className="add-list">
